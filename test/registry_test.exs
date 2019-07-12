@@ -25,5 +25,14 @@ defmodule KeyValue.RegistryTest do
     assert KeyValue.Registry.lookup(registry, "shopping") == :error
   end
 
+  test "removes bucket on crash", %{registry: registry} do
+    KeyValue.Registry.create(registry, "shopping")
+    {:ok, bucket} = KeyValue.Registry.lookup(registry, "shopping")
+
+    # Stop the bucket with non-normal reason
+    Agent.stop(bucket, :shutdown)
+    assert KeyValue.Registry.lookup(registry, "shopping") == :error
+  end
+
 
 end

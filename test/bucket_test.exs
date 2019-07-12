@@ -13,4 +13,8 @@ defmodule KeyValue.BucketTest do
     KeyValue.Bucket.put(bucket, "milk", 3)
     assert KeyValue.Bucket.get(bucket, "milk") == 3
   end
+
+  test "are temporary workers" do
+    assert Supervisor.child_spec(KeyValue.Bucket, []).restart == :temporary
+  end
 end
