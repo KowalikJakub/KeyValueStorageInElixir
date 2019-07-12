@@ -1,4 +1,5 @@
 defmodule KeyValue.Registry do
+  ## Server API
   use GenServer
 
   def init(:ok) do

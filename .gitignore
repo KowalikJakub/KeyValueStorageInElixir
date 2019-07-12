@@ -22,3 +22,6 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 kv-*.tar
 
+# Elixir Dialyzer files
+.elixir_ls/
+

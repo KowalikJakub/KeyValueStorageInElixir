@@ -3,7 +3,7 @@ defmodule KeyValue.MixProject do
 
   def project do
     [
-      app: :kv,
+      app: :key_value,
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,8 @@ defmodule KeyValue.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {KV, []}
     ]
   end
 
