@@ -43,10 +43,8 @@ defmodule KeyValue.RegistryTest do
     KeyValue.Registry.create(registry, "shopping")
     {:ok, bucket} = KeyValue.Registry.lookup(registry, "shopping")
 
-    # Simulate a bucket crash by explicitly and synchronously shutting it down
     Agent.stop(bucket, :shutdown)
 
-    # Now trying to call the dead process causes a :noproc exit
     catch_exit KeyValue.Bucket.put(bucket, "milk", 3)
   end
 
