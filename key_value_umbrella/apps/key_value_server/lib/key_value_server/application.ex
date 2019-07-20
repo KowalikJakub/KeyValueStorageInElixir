@@ -7,7 +7,7 @@ defmodule KeyValueServer.Application do
     port =
       String.to_integer(
         System.get_env("KEYVALUE_PORT") ||
-          raise("missing $PORT environment variable")
+          raise("missing $KEYVALUE_PORT environment variable")
       )
 
     children = [

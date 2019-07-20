@@ -1,0 +1,9 @@
+{application,key_value,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"key_value"},
+              {modules,['Elixir.KeyValue','Elixir.KeyValue.Bucket',
+                        'Elixir.KeyValue.Registry',
+                        'Elixir.KeyValue.Supervisor']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.KeyValue',[]}}]}.
